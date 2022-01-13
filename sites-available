@@ -1,0 +1,18 @@
+server {
+  listen 80 default_server;
+  listen [::]:80 default_server;
+  root /var/www/buyole.com;
+  index index.html;
+  server_name buyole.com www.buyole.com;
+  location / {
+    try_files $uri $uri/ =404;
+  }
+}
+
+// HTTPS CONFIGURATION
+
+server {
+   listen 443 default_server;
+   listen [::]:443 default_server;
+   #... all other content
+}
